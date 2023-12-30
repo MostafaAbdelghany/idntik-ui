@@ -1,0 +1,210 @@
+/*** Buttons ***/
+.btn-play {
+    padding: 0.5rem;
+    border: 1px solid $white;
+    width: max-content;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: $transitionFast;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        right: 10%;
+        width: 6px;
+        height: 1px;
+        background-color: $black;
+    }
+}
+
+.btn-view-more {
+    border: none;
+    background: transparent;
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: $white;
+    font-weight: 500;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        transition: $transitionFast;
+        right: 0;
+        top: 0;
+        background-color: $white;
+    }
+    &::before {
+        height: 50%;
+        width: 2px;
+    }
+    &::after {
+        width: 20%;
+        height: 2px;
+    }
+
+    span {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            transition: $transitionFast;
+            left: 0;
+            bottom: 0;
+            background-color: $white;
+        }
+        &::before {
+            height: 50%;
+            width: 2px;
+        }
+        &::after {
+            width: 20%;
+            height: 2px;
+        }
+    }
+    &:hover {
+        &::before {
+            height: 100%;
+        }
+        &::after {
+            width: 100%;
+        }
+        span {
+            &::before {
+                height: 100%;
+            }
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.btn-notch {
+    padding: 0.5rem;
+    border: 1px solid $white;
+    width: max-content;
+    position: relative;
+    transition: $transitionFast;
+    background: transparent;
+    display: inline-block;
+    text-decoration: none;
+    color: $white;
+    &:hover {
+        color: $white;
+        background-color: $orange;
+        border-color: $orange;
+        &::before {
+            opacity: 0;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 1px;
+        background-color: $black;
+        transition: $transitionFast;
+    }
+    .icon {
+        width: 35px;
+        height: 35px;
+        transition: $transitionFast;
+    }
+    &.bottom {
+        &::before {
+            bottom: -1px;
+            right: 10%;
+        }
+    }
+    &.top {
+        &::before {
+            top: -1px;
+            left: 10%;
+        }
+    }
+    &.both {
+        &::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 1px;
+            background-color: $black;
+            transition: $transitionFast;
+        }
+        &::after {
+            top: -1px;
+            left: 10%;
+        }
+        &::before {
+            bottom: -1px;
+            right: 10%;
+        }
+    }
+    &.arrow-top-start {
+        .icon {
+            transform: rotate(-40deg);
+        }
+        &:hover {
+           
+            &::before {
+                opacity: 0;
+            }
+            .icon {
+                transform: rotate(0deg);
+            }
+        }
+    }
+    &.arrow-top {
+        .icon {
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.btn-icon-group  {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0.5rem .85rem;
+    .icon-wrap  {
+        position: relative;
+        padding-left: 0.5rem;
+        margin-left: 0.85rem;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: calc(100% + 1rem);
+            width: 1px;
+            background-color: $white;
+        }
+        .icon {
+            transition: $transitionFast;
+        }
+    }
+    &:hover {
+        border-color: $white;
+    }
+}
+
+
+.btn-talk-to-us {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    writing-mode: vertical-lr;
+    transform: scale(-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $black;
+    z-index: 9;
+    padding: 0.75rem 0.5rem;
+    color: $yellow;
+    .icon {
+        margin-top: 0.5rem;
+    }
+}
